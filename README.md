@@ -1,2 +1,2 @@
-# interactiveQuiz
-The program takes in a text file with quiz questions/answers and generate a quiz.
+# InteractiveQuiz
+The program takes in a text file with quiz questions/answers and generates a quiz. 
