@@ -11,7 +11,6 @@ public class InteractiveQuiz {
     public static void main(String[] args) throws FileNotFoundException {
 
 
-        BufferedReader reader = new BufferedReader(new FileReader("sample.q.txt"));
         try {
             // open file in read mode
             RandomAccessFile file = new RandomAccessFile("sample.q.txt", "r");
