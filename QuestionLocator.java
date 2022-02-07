@@ -33,8 +33,8 @@ public class QuestionLocator {
         return qLocations;
     }
 
-    public int getQuestionLocation(int question){
-        question = question -1;
+    public int gqtQuestionLocation(int question){
+        question = question-1;
         return qLocations[question];
     }
     

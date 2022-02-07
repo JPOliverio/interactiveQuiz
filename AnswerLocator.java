@@ -32,6 +32,11 @@ public class AnswerLocator {
     public int[] getAllAnswerLocations(){
         return aLocations;
     }
+
+    public int getAnswerLocation(int answer){
+        answer = answer -1;
+        return aLocations[answer];
+    }
     
     // returns the number of answer start locations in the file.
     public int getAnswerCount(){

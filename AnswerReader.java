@@ -5,7 +5,7 @@ import java.io.RandomAccessFile;
 public class AnswerReader {
 
     String entireQuestion;
-    String [] aChoses = new String[10];
+    String [] aChoices = new String[10];
     int solution;
 
 public AnswerReader(String fileName, int aPosition){  //aPosition is the position of the desired answer start point in the text file
@@ -25,7 +25,7 @@ public AnswerReader(String fileName, int aPosition){  //aPosition is the positio
                             solution = Integer.parseInt(line);
                             sFound =true;
                         }else{
-                        aChoses[i]=line;
+                        aChoices[i]=line;
                         i++;
                         }
                     }  
@@ -42,8 +42,17 @@ public int getSolution(){
     return solution;
 }
 
-public String[] getChoses(){
-    return aChoses;
+public String[] getChoices(){
+    return aChoices;
+}
+
+public int getNumberofChoices(){
+    return aChoices.length;
+}
+
+public String getChoice(int Choice){
+    Choice = Choice - 1;
+    return aChoices[Choice];
 }
     
 }
