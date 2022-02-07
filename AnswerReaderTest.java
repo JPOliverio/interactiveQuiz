@@ -4,8 +4,15 @@ public class AnswerReaderTest {
     public static void main(String[] args) throws FileNotFoundException {
         AnswerLocator aLocation = new AnswerLocator("sample.q.txt");
 
-        int acount = aLocation.getAnswerCount();
-        int aposition = aLocation.get
+        int aCount = aLocation.getAnswerCount();
+        int aPosition = aLocation.getAnswerLocation(2);
+
+        AnswerReader aReader = new AnswerReader("sample.q.txt", aPosition);
+
+        System.out.println(aReader.getSolution());
+       // System.out.println(aLocation.getAnswerCount());
+       
+
 
 
 
