@@ -7,11 +7,14 @@ public class AnswerReader {
     String entireQuestion;
     String [] aChoices = new String[10];
     int solution;
+    int i; //counter and tracks the number of choises for a question.
 
 public AnswerReader(String fileName, int aPosition){  //aPosition is the position of the desired answer start point in the text file
     String line=" ";
-    int i = 0;
+    i = 0;
     boolean sFound = false; // has the soultion been identified.
+
+    
     
     try{
         RandomAccessFile file = new RandomAccessFile(fileName, "r");
@@ -25,7 +28,9 @@ public AnswerReader(String fileName, int aPosition){  //aPosition is the positio
                             solution = Integer.parseInt(line);
                             sFound =true;
                         }else{
+                        System.out.println(line);
                         aChoices[i]=line;
+                        System.out.println(aChoices[i]);
                         i++;
                         }
                     }  
@@ -47,7 +52,7 @@ public String[] getChoices(){
 }
 
 public int getNumberofChoices(){
-    return aChoices.length;
+    return i;
 }
 
 public String getChoice(int Choice){

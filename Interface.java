@@ -1,35 +1,34 @@
-
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.plaf.DimensionUIResource;
-
-import java.awt.TextField;
-import javax.swing.JLabel;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import java.awt.event.*;
 import java.awt.Container;
-import java.awt.FlowLayout;
+
+public class Interface {
+    JFrame frame;
+    JTextArea textArea;
+    int solutionKey;
+    JTextArea qOneText, qTwoText, qThreeText, qFourText, qFiveText,
+    qSixText, qSevenText, qEightText, qNineText, qTenText;
+    Container contentPane;
 
 
-public class InteractiveQuiz {
-
-    public static void main(String[] args) {
-        JFrame frame;
+    Interface(){
+        
         frame = new JFrame("Interactive Quiz");
         frame.setSize(550,700);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JTextArea textArea = new JTextArea("eat shit hiibacjabwcjhqjkhcqj hwqicbqwhcbqhjwbcjq iwbcbwcbqwicbqwbc bwecbqwbcuqwbcqbcuh bwucbquhwbcuhwbchjwbqcj bqwubcquwbcquwhbchqwejb bwebcouqwh");
+        textArea = new JTextArea();
         JScrollPane paneTextArea = new JScrollPane(textArea);
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
 
         //frame.add(textArea);
 
-        Container contentPane = frame.getContentPane();
+        contentPane = frame.getContentPane();
         SpringLayout layout = new SpringLayout();
         contentPane.setLayout(layout);
 
@@ -88,12 +87,6 @@ public class InteractiveQuiz {
 
 
 
-
-
-
-
-
-
         layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, paneTextArea, 0, SpringLayout.HORIZONTAL_CENTER, contentPane);
 
         layout.putConstraint(SpringLayout.WEST, buttonOne, 15, SpringLayout.WEST, contentPane);
@@ -146,19 +139,31 @@ public class InteractiveQuiz {
         layout.putConstraint(SpringLayout.WEST, qTenText, 15, SpringLayout.EAST, buttonTen);
         layout.putConstraint(SpringLayout.NORTH, qTenText, 15, SpringLayout.SOUTH, buttonNine);
 
-
-
-
-
-
-
-
         frame.setVisible(true);
-
-
-
-
 
     }
 
+// this line updates the interface with the new question
+    public void updateInterface(String question, String[] choices, int solution, int numberOfChoices){
+        frame.setVisible(false);
+        solutionKey = solution;
+
+                // this section updaes the question
+                textArea.setText(question);
+
+        // this section resets the text fields
+        if(choices[0]!=null){ qOneText.setText(choices[0]);
+            }else if(choices[1]!=null){qTwoText.setText(choices[1]); 
+                }else if(choices[2]!=null){qThreeText.setText(choices[2]); 
+                 }else if(choices[3]!=null){qFourText.setText(choices[3]); 
+                    }else if(choices[4]!=null){qFiveText.setText(choices[4]);
+                        }else if(choices[5]!=null){qSixText.setText(choices[5]);
+                            }else if(choices[6]!=null){qSevenText.setText(choices[6]);
+                                }else if(choices[7]!=null){qEightText.setText(choices[7]);
+                                    }else if(choices[7]!=null){qNineText.setText(choices[8]);
+                                        }else if(choices[9]!=null){qTenText.setText(choices[9]);
+                                        }
+
+    }
+    
 }
