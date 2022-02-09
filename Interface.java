@@ -1,19 +1,26 @@
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.plaf.DimensionUIResource;
 import java.awt.Container;
+import java.awt.event.*;
+import java.awt.Color;
 
 public class Interface {
     JFrame frame;
     JTextArea textArea;
     int solutionKey;
-    JTextArea qOneText, qTwoText, qThreeText, qFourText, qFiveText,
-    qSixText, qSevenText, qEightText, qNineText, qTenText;
+    JLabel qOneText, qTwoText, qThreeText, qFourText, qFiveText,
+    qSixText, qSevenText, qEightText, qNineText, qTenText, statsText;
     Container contentPane;
+    int buttonClicked;
+    boolean alreadyHit =false;
+    boolean nextButtonHit = false;
+    int correctA = 0;
+    private int qCount = 1;
 
 
     Interface(){
@@ -26,8 +33,6 @@ public class Interface {
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
 
-        //frame.add(textArea);
-
         contentPane = frame.getContentPane();
         SpringLayout layout = new SpringLayout();
         contentPane.setLayout(layout);
@@ -35,58 +40,214 @@ public class Interface {
         paneTextArea.setPreferredSize(new DimensionUIResource(500,100));
         contentPane.add(paneTextArea);
 
+
+        //**************Buttons and Label for question choices****************** */
         JButton buttonOne = new JButton();
         contentPane.add(buttonOne); 
-        JTextArea qOneText = new JTextArea(" lets go mounitan mamas i like to eat giant gnats");
+        qOneText = new JLabel(" lets go mounitan mamas i like to eat giant gnats");
         contentPane.add(qOneText);
 
         JButton buttonTwo = new JButton();
         contentPane.add(buttonTwo);
-        JTextArea qTwoText = new JTextArea(" question two");
+        qTwoText = new JLabel(" question two");
         contentPane.add(qTwoText);
 
         JButton buttonThree = new JButton();
         contentPane.add(buttonThree);
-        JTextArea qThreeText = new JTextArea(" question Three");
+        qThreeText = new JLabel(" question Three");
         contentPane.add(qThreeText);
 
         JButton buttonFour = new JButton();
         contentPane.add(buttonFour);
-        JTextArea qFourText = new JTextArea(" question Four");
+        qFourText = new JLabel(" question Four");
         contentPane.add(qFourText);
 
         JButton buttonFive = new JButton();
         contentPane.add(buttonFive);
-        JTextArea qFiveText = new JTextArea(" question Five");
+        qFiveText = new JLabel(" question Five");
         contentPane.add(qFiveText);
 
         JButton buttonSix = new JButton();
         contentPane.add(buttonSix);
-        JTextArea qSixText = new JTextArea(" question Six");
+        qSixText = new JLabel(" question Six");
         contentPane.add(qSixText);
 
         JButton buttonSeven = new JButton();
         contentPane.add(buttonSeven);
-        JTextArea qSevenText = new JTextArea(" question Seven");
+        qSevenText = new JLabel(" question Seven");
         contentPane.add(qSevenText);
 
         JButton buttonEight = new JButton();
         contentPane.add(buttonEight);
-        JTextArea qEightText = new JTextArea(" question Eight");
+        qEightText = new JLabel(" question Eight");
         contentPane.add(qEightText);
 
         JButton buttonNine = new JButton();
         contentPane.add(buttonNine);
-        JTextArea qNineText = new JTextArea(" question Nine");
+        qNineText = new JLabel(" question Nine");
         contentPane.add(qNineText);
 
         JButton buttonTen = new JButton();
         contentPane.add(buttonTen);
-        JTextArea qTenText = new JTextArea(" question Ten");
+        qTenText = new JLabel(" question Ten");
         contentPane.add(qTenText);
+        //***************************************************** */
+
+        //************Btton for next Question****************** */
+        JButton buttonNext = new JButton("Next Question");
+        contentPane.add(buttonNext);
+        //***************************************************** */
+
+        //***************Stats text display******************** */
+        statsText = new JLabel(" question Ten");
+        contentPane.add(statsText);
+        //***************************************************** */
+
+
+        //*****************Button Action Listner************** */
+        buttonOne.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(alreadyHit==false){buttonClicked=1;
+                    alreadyHit=true;
+                if(solutionKey==1){
+                    frame.getContentPane().setBackground(Color.GREEN);
+                    correctA++;
+                    }else{frame.getContentPane().setBackground(Color.RED);
+                }
+            }
+            }
+         });
+
+         buttonTwo.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(alreadyHit==false){buttonClicked=2;
+                    alreadyHit=true;
+                if(solutionKey==2){
+                    frame.getContentPane().setBackground(Color.GREEN);
+                    correctA++;
+                }else{frame.getContentPane().setBackground(Color.RED);
+                }
+            }
+            }
+         });
+
+         buttonThree.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(alreadyHit==false){buttonClicked=3;
+                    alreadyHit=true;
+                if(solutionKey==3){
+                    frame.getContentPane().setBackground(Color.GREEN);
+                    correctA++;
+                }else{frame.getContentPane().setBackground(Color.RED);
+                }
+            }
+            }
+         });
+
+         buttonFour.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(alreadyHit==false){buttonClicked=4;
+                    alreadyHit=true;
+                if(solutionKey==4){
+                    frame.getContentPane().setBackground(Color.GREEN);
+                    correctA++;
+                }else{frame.getContentPane().setBackground(Color.RED);
+                }
+            }
+            }
+         });
+
+         buttonFive.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(alreadyHit==false){buttonClicked=5;
+                    alreadyHit=true;
+                if(solutionKey==5){
+                    frame.getContentPane().setBackground(Color.GREEN);
+                    correctA++;
+                }else{frame.getContentPane().setBackground(Color.RED);
+                }
+            }
+            }
+         });
+
+         buttonSix.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(alreadyHit==false){buttonClicked=6;
+                    alreadyHit=true;
+                if(solutionKey==6){
+                    frame.getContentPane().setBackground(Color.GREEN);
+                    correctA++;
+                }else{frame.getContentPane().setBackground(Color.RED);
+                }
+            }
+            }
+         });
+
+         buttonSeven.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(alreadyHit==false){buttonClicked=7;
+                    alreadyHit=true;
+                if(solutionKey==7){
+                    frame.getContentPane().setBackground(Color.GREEN);
+                    correctA++;
+                }else{frame.getContentPane().setBackground(Color.RED);
+                }
+            }
+            }
+         });
+
+         buttonEight.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(alreadyHit==false){buttonClicked=8;
+                    alreadyHit=true;
+                if(solutionKey==8){
+                    frame.getContentPane().setBackground(Color.GREEN);
+                    correctA++;
+                }else{frame.getContentPane().setBackground(Color.RED);
+                }
+            }
+            }
+         });
+
+         buttonNine.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(alreadyHit==false){buttonClicked=9;
+                    alreadyHit=true;
+                if(solutionKey==9){
+                    frame.getContentPane().setBackground(Color.GREEN);
+                    correctA++;
+                }else{frame.getContentPane().setBackground(Color.RED);
+                }
+            }
+            }
+         });
+
+         buttonTen.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(alreadyHit==false){buttonClicked=10;
+                    alreadyHit=true;
+                if(solutionKey==10){
+                    frame.getContentPane().setBackground(Color.GREEN);
+                    correctA++;
+                }else{frame.getContentPane().setBackground(Color.RED);
+                }
+            }
+            }
+         });
+         //*****************************************************/
+
+         //***************** NextButton Action *****************/
+         buttonNext.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                nextButtonHit = true;
+                qCount++;
+            }
+         });
+        //******************************************************/
 
 
 
+        //******************Setting Layout**********************/
         layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, paneTextArea, 0, SpringLayout.HORIZONTAL_CENTER, contentPane);
 
         layout.putConstraint(SpringLayout.WEST, buttonOne, 15, SpringLayout.WEST, contentPane);
@@ -139,31 +300,92 @@ public class Interface {
         layout.putConstraint(SpringLayout.WEST, qTenText, 15, SpringLayout.EAST, buttonTen);
         layout.putConstraint(SpringLayout.NORTH, qTenText, 15, SpringLayout.SOUTH, buttonNine);
 
+        layout.putConstraint(SpringLayout.EAST, buttonNext, 0, SpringLayout.EAST, contentPane);
+        layout.putConstraint(SpringLayout.SOUTH, buttonNext, 0, SpringLayout.SOUTH, contentPane);
+
+        layout.putConstraint(SpringLayout.WEST, statsText, 0, SpringLayout.WEST, contentPane);
+        layout.putConstraint(SpringLayout.SOUTH, statsText, 0, SpringLayout.SOUTH, contentPane);
+        //****************************************** */
+
         frame.setVisible(true);
 
     }
 
-// this line updates the interface with the new question
+// this method updates the interface with the new question
     public void updateInterface(String question, String[] choices, int solution, int numberOfChoices){
-        frame.setVisible(false);
+        nextButtonHit = false;
+        alreadyHit=false;
+        //frame.setVisible(false);
         solutionKey = solution;
 
-                // this section updaes the question
-                textArea.setText(question);
+        // this section updaes the question
+        textArea.setText(question);
 
-        // this section resets the text fields
-        if(choices[0]!=null){ qOneText.setText(choices[0]);
-            }else if(choices[1]!=null){qTwoText.setText(choices[1]); 
-                }else if(choices[2]!=null){qThreeText.setText(choices[2]); 
-                 }else if(choices[3]!=null){qFourText.setText(choices[3]); 
-                    }else if(choices[4]!=null){qFiveText.setText(choices[4]);
-                        }else if(choices[5]!=null){qSixText.setText(choices[5]);
-                            }else if(choices[6]!=null){qSevenText.setText(choices[6]);
-                                }else if(choices[7]!=null){qEightText.setText(choices[7]);
-                                    }else if(choices[7]!=null){qNineText.setText(choices[8]);
-                                        }else if(choices[9]!=null){qTenText.setText(choices[9]);
-                                        }
+        // this section resets the text labels
+        qOneText.setText((choices[0]!=null ? choices[0]:" "));
+        qTwoText.setText((choices[1]!=null ? choices[1]:" "));
+        qThreeText.setText((choices[2]!=null ? choices[2]:" "));
+        qFourText.setText((choices[3]!=null ? choices[3]:" "));
+        qFiveText.setText((choices[4]!=null ? choices[4]:" "));
+        qSixText.setText((choices[5]!=null ? choices[5]:" "));
+        qSevenText.setText((choices[6]!=null ? choices[6]:" "));
+        qEightText.setText((choices[7]!=null ? choices[7]:" "));
+        qNineText.setText((choices[8]!=null ? choices[8]:" "));
+        qTenText.setText((choices[9]!=null ? choices[9]:" "));
+
+        System.out.println(buttonClicked);
+    }
+
+
+    // this method updates the player stats
+    public void statsUpdate(long time){
+        double percent = 0;
+        if(alreadyHit){
+            try{
+                percent = (correctA/qCount)*100;
+            }catch (ArithmeticException e){
+                percent = 0;
+            }
+            statsText.setText("Correct:"+correctA+" Percent_Correct" +percent+"%"+" time:"+time);
+        }else{
+            try{
+                percent = (correctA/qCount)*100;
+            }catch (ArithmeticException e){
+                percent = 0;
+            }
+            statsText.setText("Correct:"+correctA+" Percent_Correct" +percent+"%"+" time:"+time);
+        }
 
     }
+
+    // This method returns the qCount asked.
+    public int getqCount(){
+        return qCount;
+    }
+
+    //this method ends the game and displayes the final stats
+    public void endGame(long time){
+        qCount--;
+        frame.setVisible(false);
+        frame.dispose();
+        JFrame endFrame = new JFrame("Interactive Quiz");
+        endFrame.setSize(550,700);
+        endFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JLabel endLabel = new JLabel();
+
+        double percent =0;
+        try{
+            percent = (correctA/qCount)*100;
+        }catch (ArithmeticException e){
+            percent = 0;
+        }
+        endLabel.setText("Number of Question:"+qCount +" Correct:"+correctA+" Percent_Correct" +percent+"%"+" time:"+time);
+        endFrame.add(endLabel);
+        endFrame.setVisible(true);
+    }
+
+
+
     
 }

@@ -16,7 +16,7 @@ public class AnswerLocator {
 
         try{
             while ((line = file.readLine()) != null) {
-                if(line.startsWith("@A")){  // sarches for answer in file
+                if(line.startsWith("@A")){  // searches for answer in file
                     aLocation = file.getFilePointer(); // gets answer location
                     queLocations.add((int)aLocation); // stores answer location
                 }

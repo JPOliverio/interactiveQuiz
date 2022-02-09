@@ -19,7 +19,7 @@ public QuestionReader(String fileName, int qPosition){  //qPosition is the posit
             if(line != null){
                 if((!(line.startsWith("*")) && !(line.trim().length()==0))){ //this line ignores * and blank spots in the text file
                     if(!(line.startsWith("@A"))){ // this looks for quesion end point
-                        question.append(line);
+                        question.append(" "+line);
                     }  
                 }   
             }     
@@ -28,6 +28,7 @@ public QuestionReader(String fileName, int qPosition){  //qPosition is the posit
     } catch (IOException e){
         e.printStackTrace();
     }
+    question.deleteCharAt(0);
     entireQuestion = question.toString();
 }
 
