@@ -21,6 +21,7 @@ public class Interface {
     boolean nextButtonHit = false;
     double correctA;
     double qCount = 1;
+    JButton buttonNext;
 
 
     Interface(){
@@ -96,7 +97,7 @@ public class Interface {
         //***************************************************** */
 
         //************Btton for next Question****************** */
-        JButton buttonNext = new JButton("Next Question");
+        buttonNext = new JButton("Next Question");
         contentPane.add(buttonNext);
         //***************************************************** */
 
@@ -241,6 +242,7 @@ public class Interface {
          //***************** NextButton Action *****************/
          buttonNext.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                buttonNext.setVisible(false); // have to hide button to prevent bug cause by user clicking to fast
                 nextButtonHit = true;
                 qCount++;
             }
@@ -335,6 +337,7 @@ public class Interface {
         qEightText.setText((choices[7]!=null ? choices[7]:" "));
         qNineText.setText((choices[8]!=null ? choices[8]:" "));
         qTenText.setText((choices[9]!=null ? choices[9]:" "));
+        buttonNext.setVisible(true);
     }
 
 
