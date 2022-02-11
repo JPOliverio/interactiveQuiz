@@ -6,21 +6,17 @@ import java.util.ListIterator;
 public class AssignmentOne {
     public static void main(String[] args) throws FileNotFoundException {
         
-        // Gets the file name
+        //******** Gets the file name ***************/
         txtSelectorinterface texts = new txtSelectorinterface();
         String txtName=null;
-
         while(txtName==null){
             txtName=texts.getTxtName();
         }
-        
-
+        //**************************************** */
 
         AnswerLocator aLocator = new AnswerLocator(txtName);
         QuestionLocator qLocator = new QuestionLocator(txtName);
-
         int qCount = qLocator.getQuestionCount();
-
 
         //************Question place lis*******************/
         // creates list with values 1 to number of questions then shuffles it.
@@ -34,18 +30,18 @@ public class AssignmentOne {
         //*************************************************/
 
 
+        //****** Opens a new Interactive Quiz Interface******** */
         Interface intFace = new Interface();
-        int place;
+        //**************************************************** */
 
+        //*********************Interactive Quiz Logic********* */
+        int place;
         AnswerReader aReader;
         QuestionReader qReader;
         long startTime = System.currentTimeMillis();
         long currentTime;
         long time;
         Boolean nextQuestion = true;
-
-
-
 
         int j = 0;
         while(qCount>=j){
@@ -58,7 +54,6 @@ public class AssignmentOne {
                     currentTime = System.currentTimeMillis();
                     time = (currentTime-startTime)/1000;
                     place = iterator.next();
-
                     aReader = new AnswerReader(txtName, aLocator.getAnswerLocation(place));
                     qReader = new QuestionReader(txtName, qLocator.getQuestionLocation(place));
                     intFace.updateInterface(qReader.getQuestion(), aReader.getChoices(), aReader.getSolution(), aReader.getNumberofChoices());
@@ -68,16 +63,13 @@ public class AssignmentOne {
             }else{ 
                 intFace.statsUpdate(time);
             }
-
             nextQuestion = intFace.nextQuestion();
-        
         }
 
         currentTime = System.currentTimeMillis();
         time = (currentTime-startTime)/1000;
         intFace.endGame(time);
-
-
+        //************************************************************** */
 
 
     }

@@ -1,3 +1,8 @@
+/**This class reads answears and records the solution for a specified 
+ * question. The specified question is given by the position. The position is 
+ * from the AnswerLocator.
+ */
+
 
 import java.io.IOException;
 import java.io.RandomAccessFile;

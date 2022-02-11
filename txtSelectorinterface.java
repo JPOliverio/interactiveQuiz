@@ -1,3 +1,7 @@
+/** This Class opens a user interface that searchs and allows users
+ * to select a desired txt file.
+ */
+
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;

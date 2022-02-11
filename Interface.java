@@ -1,3 +1,10 @@
+/**This class is the use interface for the quiz controller
+ * It keeps track of how many questions where asked and
+ * how many questions the user gets right. It only needs time to be entered using the
+ * updateInterface method.
+ */
+
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;

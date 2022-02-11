@@ -1,3 +1,8 @@
+/**This class reads questions and records the question as a string for a specified 
+ * question. The specified question is given by the position. The position is 
+ * from the questionLocator.
+ */
+
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.lang.StringBuilder;
