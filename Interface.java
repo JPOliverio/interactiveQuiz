@@ -19,11 +19,13 @@ public class Interface {
     int buttonClicked;
     boolean alreadyHit =false;
     boolean nextButtonHit = false;
-    int correctA = 0;
-    private int qCount = 1;
+    double correctA;
+    double qCount = 1;
 
 
     Interface(){
+        correctA=0;
+        
         
         frame = new JFrame("Interactive Quiz");
         frame.setSize(550,700);
@@ -313,6 +315,7 @@ public class Interface {
 
 // this method updates the interface with the new question
     public void updateInterface(String question, String[] choices, int solution, int numberOfChoices){
+        frame.getContentPane().setBackground(Color.WHITE);
         nextButtonHit = false;
         alreadyHit=false;
         //frame.setVisible(false);
@@ -332,36 +335,23 @@ public class Interface {
         qEightText.setText((choices[7]!=null ? choices[7]:" "));
         qNineText.setText((choices[8]!=null ? choices[8]:" "));
         qTenText.setText((choices[9]!=null ? choices[9]:" "));
-
-        System.out.println(buttonClicked);
     }
 
 
     // this method updates the player stats
     public void statsUpdate(long time){
-        double percent = 0;
+        nextButtonHit = false;
+        double percent;
         if(alreadyHit){
-            try{
                 percent = (correctA/qCount)*100;
-            }catch (ArithmeticException e){
-                percent = 0;
-            }
             statsText.setText("Correct:"+correctA+" Percent_Correct" +percent+"%"+" time:"+time);
         }else{
-            try{
-                percent = (correctA/qCount)*100;
-            }catch (ArithmeticException e){
-                percent = 0;
-            }
+                percent = (correctA/(qCount-1))*100;
             statsText.setText("Correct:"+correctA+" Percent_Correct" +percent+"%"+" time:"+time);
         }
 
     }
 
-    // This method returns the qCount asked.
-    public int getqCount(){
-        return qCount;
-    }
 
     //this method ends the game and displayes the final stats
     public void endGame(long time){
@@ -373,16 +363,13 @@ public class Interface {
         endFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel endLabel = new JLabel();
-
-        double percent =0;
-        try{
-            percent = (correctA/qCount)*100;
-        }catch (ArithmeticException e){
-            percent = 0;
-        }
-        endLabel.setText("Number of Question:"+qCount +" Correct:"+correctA+" Percent_Correct" +percent+"%"+" time:"+time);
+        endLabel.setText("Number of Question:"+qCount +" Correct:"+correctA+" Percent_Correct" +(correctA/qCount)*100+"%"+" time:"+time);
         endFrame.add(endLabel);
         endFrame.setVisible(true);
+    }
+
+    public synchronized Boolean nextQuestion(){
+        return nextButtonHit;
     }
 
 

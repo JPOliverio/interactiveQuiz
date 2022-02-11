@@ -28,9 +28,7 @@ public AnswerReader(String fileName, int aPosition){  //aPosition is the positio
                             solution = Integer.parseInt(line);
                             sFound =true;
                         }else{
-                        System.out.println(line);
                         aChoices[i]=line;
-                        System.out.println(aChoices[i]);
                         i++;
                         }
                     }  

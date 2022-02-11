@@ -1,28 +1,19 @@
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
-
 import java.awt.ComponentOrientation;
-import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FilenameFilter;
-import java.io.IOException;
 import java.util.LinkedList;
-import java.util.List;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.SpringLayout;
 
 public class txtSelectorinterface{
 
-    String [] contents;
-    int comboIndex;
-    boolean selectCombo =false;
-    JFrame txtFrame;
+
+    String txtFileName;
 
     
     txtSelectorinterface(){
@@ -35,10 +26,10 @@ public class txtSelectorinterface{
         }
     }
 
-    contents = textFiles.toArray(new String[textFiles.size()]);
+    String [] contents = textFiles.toArray(new String[textFiles.size()]);
 
    
-    txtFrame = new JFrame("Interactive Quiz");
+    JFrame txtFrame = new JFrame("Interactive Quiz");
     txtFrame.setSize(250,200);
     txtFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     FlowLayout flowLay = new FlowLayout(FlowLayout.CENTER);
@@ -54,28 +45,34 @@ public class txtSelectorinterface{
     JButton txtButton = new JButton("Confirm");
     txtFrame.add(txtButton);
     txtFrame.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+    txtFrame.setVisible(true);
 
 
     txtButton.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-            comboIndex = comboBox.getSelectedIndex();
-            selectCombo = true;
-            txtFrame.setVisible(false);
+            txtFileName = (String) comboBox.getSelectedItem();
             txtFrame.dispose();
+            setTxtName(txtFileName);
+
         }
      });
-   
-
-
-    txtFrame.setVisible(true);
     
 }
 
-public boolean getClickedCombo(){
-    return selectCombo;
+public void setTxtName(String txtss){
+    txtFileName = txtss;
 }
 
-public String getTxtName(){
-    return contents[comboIndex];
+public boolean getClickedCombo(){
+    boolean clickedCombo =false;
+    if(txtFileName!=null){
+        clickedCombo = true;
+    }
+    return clickedCombo;
 }
+
+public synchronized String getTxtName(){
+    return this.txtFileName;
+}
+
 }
