@@ -264,52 +264,52 @@ public class Interface {
         layout.putConstraint(SpringLayout.WEST, buttonOne, 15, SpringLayout.WEST, contentPane);
         layout.putConstraint(SpringLayout.NORTH, buttonOne, 10, SpringLayout.SOUTH, paneTextArea);
         layout.putConstraint(SpringLayout.WEST, qOneText, 15, SpringLayout.EAST, buttonOne);
-        layout.putConstraint(SpringLayout.NORTH, qOneText, 15, SpringLayout.SOUTH, paneTextArea);
+        layout.putConstraint(SpringLayout.NORTH, qOneText, 5, SpringLayout.NORTH, buttonOne);
 
         layout.putConstraint(SpringLayout.WEST, buttonTwo, 15, SpringLayout.WEST, contentPane);
         layout.putConstraint(SpringLayout.NORTH, buttonTwo, 10, SpringLayout.SOUTH, buttonOne);
         layout.putConstraint(SpringLayout.WEST, qTwoText, 15, SpringLayout.EAST, buttonTwo);
-        layout.putConstraint(SpringLayout.NORTH, qTwoText, 15, SpringLayout.SOUTH, buttonOne);
+        layout.putConstraint(SpringLayout.NORTH, qTwoText, 5, SpringLayout.NORTH, buttonTwo);
 
         layout.putConstraint(SpringLayout.WEST, buttonThree, 15, SpringLayout.WEST, contentPane);
         layout.putConstraint(SpringLayout.NORTH, buttonThree, 10, SpringLayout.SOUTH, buttonTwo);
         layout.putConstraint(SpringLayout.WEST, qThreeText, 15, SpringLayout.EAST, buttonThree);
-        layout.putConstraint(SpringLayout.NORTH, qThreeText, 15, SpringLayout.SOUTH, buttonTwo);
+        layout.putConstraint(SpringLayout.NORTH, qThreeText, 5, SpringLayout.NORTH, buttonThree);
 
         layout.putConstraint(SpringLayout.WEST, buttonFour, 15, SpringLayout.WEST, contentPane);
         layout.putConstraint(SpringLayout.NORTH, buttonFour, 10, SpringLayout.SOUTH, buttonThree);
         layout.putConstraint(SpringLayout.WEST, qFourText, 15, SpringLayout.EAST, buttonFour);
-        layout.putConstraint(SpringLayout.NORTH, qFourText, 15, SpringLayout.SOUTH, buttonThree);
+        layout.putConstraint(SpringLayout.NORTH, qFourText, 5, SpringLayout.NORTH, buttonFour);
 
         layout.putConstraint(SpringLayout.WEST, buttonFive, 15, SpringLayout.WEST, contentPane);
         layout.putConstraint(SpringLayout.NORTH, buttonFive, 10, SpringLayout.SOUTH, buttonFour);
         layout.putConstraint(SpringLayout.WEST, qFiveText, 15, SpringLayout.EAST, buttonFive);
-        layout.putConstraint(SpringLayout.NORTH, qFiveText, 15, SpringLayout.SOUTH, buttonFour);
+        layout.putConstraint(SpringLayout.NORTH, qFiveText, 5, SpringLayout.NORTH, buttonFive);
 
         layout.putConstraint(SpringLayout.WEST, buttonSix, 15, SpringLayout.WEST, contentPane);
         layout.putConstraint(SpringLayout.NORTH, buttonSix, 10, SpringLayout.SOUTH, buttonFive);
         layout.putConstraint(SpringLayout.WEST, qSixText, 15, SpringLayout.EAST, buttonSix);
-        layout.putConstraint(SpringLayout.NORTH, qSixText, 15, SpringLayout.SOUTH, buttonFive);
+        layout.putConstraint(SpringLayout.NORTH, qSixText, 5, SpringLayout.NORTH, buttonSix);
 
         layout.putConstraint(SpringLayout.WEST, buttonSeven, 15, SpringLayout.WEST, contentPane);
         layout.putConstraint(SpringLayout.NORTH, buttonSeven, 10, SpringLayout.SOUTH, buttonSix);
         layout.putConstraint(SpringLayout.WEST, qSevenText, 15, SpringLayout.EAST, buttonSeven);
-        layout.putConstraint(SpringLayout.NORTH, qSevenText, 15, SpringLayout.SOUTH, buttonSix);
+        layout.putConstraint(SpringLayout.NORTH, qSevenText, 5, SpringLayout.NORTH, buttonSeven);
 
         layout.putConstraint(SpringLayout.WEST, buttonEight, 15, SpringLayout.WEST, contentPane);
         layout.putConstraint(SpringLayout.NORTH, buttonEight, 10, SpringLayout.SOUTH, buttonSeven);
         layout.putConstraint(SpringLayout.WEST, qEightText, 15, SpringLayout.EAST, buttonEight);
-        layout.putConstraint(SpringLayout.NORTH, qEightText, 15, SpringLayout.SOUTH, buttonSeven);
+        layout.putConstraint(SpringLayout.NORTH, qEightText, 5, SpringLayout.NORTH, buttonEight);
 
         layout.putConstraint(SpringLayout.WEST, buttonNine, 15, SpringLayout.WEST, contentPane);
         layout.putConstraint(SpringLayout.NORTH, buttonNine, 10, SpringLayout.SOUTH, buttonEight);
         layout.putConstraint(SpringLayout.WEST, qNineText, 15, SpringLayout.EAST, buttonNine);
-        layout.putConstraint(SpringLayout.NORTH, qNineText, 15, SpringLayout.SOUTH, buttonEight);
+        layout.putConstraint(SpringLayout.NORTH, qNineText, 5, SpringLayout.NORTH, buttonNine);
 
         layout.putConstraint(SpringLayout.WEST, buttonTen, 15, SpringLayout.WEST, contentPane);
         layout.putConstraint(SpringLayout.NORTH, buttonTen, 10, SpringLayout.SOUTH, buttonNine);
         layout.putConstraint(SpringLayout.WEST, qTenText, 15, SpringLayout.EAST, buttonTen);
-        layout.putConstraint(SpringLayout.NORTH, qTenText, 15, SpringLayout.SOUTH, buttonNine);
+        layout.putConstraint(SpringLayout.NORTH, qTenText, 5, SpringLayout.NORTH, buttonTen);
 
         layout.putConstraint(SpringLayout.EAST, buttonNext, 0, SpringLayout.EAST, contentPane);
         layout.putConstraint(SpringLayout.SOUTH, buttonNext, 0, SpringLayout.SOUTH, contentPane);
