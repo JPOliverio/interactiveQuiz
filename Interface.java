@@ -358,6 +358,7 @@ public class Interface {
         }else{
                 percent = (correctA/(qCount-1))*100;
             statsText.setText("Correct:"+correctA+" Percent_Correct" +percent+"%"+" time:"+time);
+            buttonNext.setVisible(true);
         }
 
     }
